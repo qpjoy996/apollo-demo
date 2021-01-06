@@ -1,0 +1,158 @@
+$themeColor: #485162;
+$activeColor: #ff8e2e;
+$hoverColor: #ff8e2e;
+$lightBlue: #00aaff;
+
+$color-btn-primary: #f8891b;
+
+// 盒子阴影色
+$color-box-show-primary: rgba(0, 0, 0, 0.4);
+
+.page-break {
+  height: 28px;
+  background: #f8f8f8;
+}
+
+.animation-spin {
+  animation: spin 1s linear infinite;
+}
+
+@font-face {
+  font-family: "fzcy";
+  src: local("fzcy"), url("~@/assets/fonts/FZCYJT.TTF") format("truetype");
+  font-display: block;
+}
+$globalFont: "fzcy";
+
+@mixin button {
+  outline: none;
+  font-size: 28px;
+  border-radius: 100px;
+  cursor: pointer;
+  height: 80px;
+  width: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(180deg, #ffc350, #ff7600);
+  box-shadow: 0 6px 0 #cc5200;
+  text-shadow: 4px 4px 0 #fa6400;
+  color: #fff;
+  &[data-disabled="true"] {
+    background: linear-gradient(180deg, #f0f0f0, #d6d6d6) !important;
+    cursor: default;
+    text-shadow: 4px 4px 0 #cccccc;
+    pointer-events: none;
+    box-shadow: 0 6px 0 #aaaaaa;
+  }
+}
+
+@mixin button-2 {
+  @include button;
+  background: linear-gradient(180deg, #2fcbff 0%, #1487ff 100%);
+  box-shadow: 0 6px 0 #007dbb;
+  text-shadow: 4px 4px 0 #0176b0;
+}
+
+@mixin friendBtn {
+  background: #ff7600;
+  padding: 28px 24px;
+  border-radius: 1000px;
+  font-size: 30px;
+}
+
+@mixin friendBtn-2 {
+  background: #fff;
+  color: #ff7600;
+  border: 6px solid #ff7600;
+  padding: 28px 20px;
+  font-size: 30px;
+  border-radius: 1000px;
+}
+
+// 按钮
+@mixin buttonBottom(
+  $width: 75%,
+  $backgroundColor: $color-btn-primary,
+  $color: "white"
+) {
+  font-family: "微软雅黑";
+  width: $width;
+  color: $color;
+  font-size: 56px;
+  border-radius: 10px;
+  box-shadow: 5px 5px 10px $color-box-show-primary;
+  background-color: $backgroundColor;
+  padding: 5px 0 115px;
+  border: none;
+  line-height: 135px;
+  cursor: pointer;
+}
+@mixin btnHover($color: $color-white, $hoverBg: #ff962e) {
+  color: $color;
+  background-color: $hoverBg;
+}
+
+@mixin hideScrollbar() {
+  /*控制整个滚动条*/
+  &::-webkit-scrollbar {
+    background-color: transparent;
+    width: 0;
+    height: 0;
+    background-clip: padding-box;
+  }
+
+  /*滚动条两端方向按钮*/
+  &::-webkit-scrollbar-button {
+    background-color: transparent;
+  }
+
+  /*滚动条中间滑动部分*/
+  &::-webkit-scrollbar-thumb {
+    background-color: #ccc;
+    border-radius: 20px;
+  }
+
+  /*滚动条右下角区域*/
+  &::-webkit-scrollbar-corner {
+    background-color: #ccc;
+  }
+}
+
+@mixin overflowEllipsis($line: 1) {
+  @if $line > 1 {
+    display: -webkit-box;
+  } @else {
+    display: block;
+  }
+  overflow: hidden;
+  text-overflow: ellipsis;
+  @if $line > 1 {
+    word-break: break-all;
+  } @else {
+    white-space: nowrap;
+  }
+  -webkit-line-clamp: $line;
+  -webkit-box-orient: vertical;
+}
+
+@keyframes jump {
+  0% {
+    transform: rotate(0);
+  }
+  50% {
+    transform: rotate(-30deg);
+  }
+  100% {
+    transform: rotate(0);
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

@@ -1,0 +1,360 @@
+@charset "utf-8";
+/*css reset*/
+body,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+code,
+form,
+fieldset,
+legend,
+input,
+textarea,
+p,
+blockquote,
+th,
+td,
+hr,
+button,
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  margin: 0;
+  padding: 0;
+}
+body,
+button,
+input,
+select,
+textarea {
+  font: normal 28px/1.5 "Heiti SC", "Arial", "Lucida Grande", Verdana, STXhei,
+    "Microsoft YaHei", "hei";
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section,
+iframe {
+  display: block;
+}
+
+// h1,
+// h2,
+// h3 {
+//     font-weight: 600;
+// }
+
+// h4,
+// h5,
+// h6 {
+//     font-weight: 500;
+// }
+// h1{
+//   font-size: 40px;
+// }
+// h2{
+//   font-size: 36px;
+// }
+// h3{
+//   font-size: 32px;
+// }
+
+address,
+cite,
+dfn,
+em,
+var,
+i {
+  font-style: normal;
+  font-weight: normal;
+}
+
+dfn {
+  font-family: Arial;
+}
+
+ul,
+ol,
+ul li,
+ol li {
+  list-style: none;
+}
+
+a {
+  color: #000;
+  text-decoration: none;
+}
+
+a:hover {
+  color: $hoverColor !important;
+  // transition: all 0.2s;
+}
+
+fieldset,
+img,
+button,
+input {
+  border: 0 none;
+  vertical-align: middle;
+}
+
+button,
+input,
+select,
+textarea {
+  font-size: 100%;
+}
+.iphoneX {
+  padding-bottom: constant(safe-area-inset-bottom) !important;
+  padding-bottom: env(safe-area-inset-bottom) !important;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/*-webkit-appearance改变按钮和其他控件的外观，使其类似于原生控件*/
+
+* {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+input {
+  appearance: none;
+  border-radius: 0;
+  -webkit-user-select: auto;
+}
+
+body {
+  min-width: 750px;
+  overflow-x: auto;
+  margin: 0 auto !important;
+  background: $themeColor;
+  -webkit-text-size-adjust: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-font-smoothing: antialiased;
+  /*user-select: none;*/
+  -webkit-overflow-scrolling: touch;
+  height: 100%;
+  position: relative;
+}
+
+:focus {
+  outline: none;
+}
+
+html,
+body,
+#root {
+  background: $themeColor;
+  height: 100%;
+  line-height: normal;
+}
+.App {
+  background-color: #fff;
+}
+
+// 元素可以设置宽度才可应用省略号
+.line-clamp-1 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-all;
+}
+
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-all;
+}
+
+/*清浮动*/
+.clearfix:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0;
+}
+
+/*公用input placeholder 的颜色，统一颜色*/
+input,
+textarea {
+  &::-webkit-input-placeholder {
+    color: #ddd !important;
+  }
+  &:-moz-placeholder {
+    color: #ddd !important;
+  }
+  &::-moz-placeholder {
+    color: #ddd !important;
+  }
+  &::-ms-input-placeholder {
+    color: #ddd !important;
+  }
+}
+button.ant-btn:hover,
+button.ant-btn:focus,
+textarea.ant-textarea:hover,
+textarea.ant-textarea:focus,
+input.ant-input:hover,
+input.ant-input:focus {
+  border-color: $hoverColor;
+  color: $hoverColor;
+}
+
+// 箭头右边→
+.arr-right {
+  position: relative;
+}
+.arr-right::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 30px;
+  width: 12px;
+  height: 12px;
+  border-top: 1px solid #999;
+  border-right: 1px solid #999;
+  transform: translateY(-50%) rotate(45deg);
+}
+.LayoutBox {
+  .beforeClass {
+    transition: 0.4s all;
+    transform: translateX(100%);
+    transition-timing-function: cubic-bezier(0.65, 0.05, 0.36, 1);
+    &.afterClass {
+      transform: translateX(0%);
+    }
+  }
+  .beforeClass11 {
+    transition: 0.4s all;
+    transform: translateX(-100%);
+    transition-timing-function: cubic-bezier(0.65, 0.05, 0.36, 1);
+    &.afterClass {
+      transform: translateX(0%);
+    }
+  }
+}
+
+.ant-message {
+  .ant-message-notice-content {
+    padding: 0;
+    background: transparent;
+    box-shadow: none;
+  }
+  .anticon-info-circle {
+    display: none;
+  }
+}
+
+// editor message
+#root {
+  .ant-message {
+    .ant-message-notice {
+      .ant-message-notice-content {
+        font-size: 32px;
+        width: 82%;
+        background-color: rgba(0, 0, 0, 0.36);
+        color: #fff;
+        span.anticon.anticon-close-circle {
+          font-size: 32px !important;
+          top: 0;
+          margin-right: 16px;
+        }
+      }
+    }
+  }
+}
+
+.hubScrollBody::-webkit-scrollbar {
+  width: 0 !important;
+  height: 0 !important;
+}
+.editorScrollBody {
+  overflow-y: auto;
+  // height: 100vh;
+}
+.editorScrollBody::-webkit-scrollbar {
+  width: 12px !important;
+  height: auto;
+}
+.editorScrollBody::-webkit-scrollbar-track {
+  // background: transparent;
+}
+.editorScrollBody::-webkit-scrollbar-thumb {
+  background: transparent;
+  background: #b1c5ea;
+  border-radius: 8px;
+}
+
+// .editorScrollBody:hover::-webkit-scrollbar-track {
+//   background: rgba($color: #b1c5ea, $alpha: 0.3);
+//   background: transparent;
+// }
+
+// .editorScrollBody:hover::-webkit-scrollbar-thumb {
+//   background: #b1c5ea;
+//   border-radius: 8Px;
+// }
+// .editorScrollBody::-webkit-scrollbar-thumb:hover {
+//   background: #b1c5ea;
+//   border-radius: 8Px;
+// }
+
+#__vconsole .vc-switch {
+  bottom: 200px !important;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+input[type="number"] {
+  -moz-appearance: textfield;
+}

@@ -11,8 +11,10 @@
     "customize-cra": "^1.0.0",
     "dotenv": "^8.2.0",
     "dotenv-cli": "^4.0.0",
+    "eruda": "^2.4.1",
     "husky": "^4.3.5",
     "less-loader": "^7.1.0",
+    "lodash": "^4.17.20",
     "postcss": "^8.2.0",
     "postcss-flexbugs-fixes": "^5.0.2",
     "postcss-preset-env": "^6.7.0",
@@ -23,8 +25,11 @@
     "react-app-rewire-postcss": "^3.0.2",
     "react-app-rewired": "^2.1.7",
     "react-dom": "^17.0.1",
+    "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.1",
     "sass-resources-loader": "^2.1.1",
+    "unfetch": "^4.2.0",
+    "vconsole": "^3.3.4",
     "web-vitals": "^0.2.4"
   },
   "scripts": {
